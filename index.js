@@ -1,8 +1,22 @@
-const { Person } = require("./personmodel");
+const { Person, createPerson } = require("./personmodel");
+const { people } = require("./people");
 
-const person1 = new Person("Azky", 2011, 165, 42);
-console.log(person1);
-person1.getage();
-console.log(person1.energy);
-person1.walk(10);
-person1.eat(10);
+console.log(people[0].name);
+
+for (let i = 0; i < people.length; i++) {
+  const person = people[i];
+  if(person.name === "Azky") {
+    continue;// Skip Azky
+  }
+  if(person.name === "Agus") {
+    break;// menghentikan loop jika nama Agus ditemukan
+  }
+  console.log(`Name: ${person.name} is present`);
+}
+
+people.push(createPerson({
+    name: "Eka", 
+    birthyear: 2005, 
+    height: 160, 
+    weight: 50
+}));

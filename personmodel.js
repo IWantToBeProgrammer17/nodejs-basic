@@ -65,4 +65,9 @@ class Person {
   }
 }
 
-module.exports = {Person}
+function createPerson({name, birthyear, height, weight}) {
+    return new Person(name, birthyear, height, weight);
+}
+
+
+module.exports = {Person, createPerson};
